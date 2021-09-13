@@ -19,10 +19,7 @@ public class PRO27 {
 		if(correct) {
 			return u + solution(v);
 		} 
-		System.out.println(u);
-		System.out.println(v);
 		String answer = "(" + solution(v) + ")";
-		System.out.println(answer);
 		for(int i = 1; i < u.length() - 1; i++) {
 			if(u.charAt(i) == '(') {
 				answer += ")";
