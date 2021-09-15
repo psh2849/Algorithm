@@ -1,48 +1,48 @@
 /*
- * 2559 수열(투포인터)
+ * 2230 수고르기(투포인터)
  */
-package topologicalSort;
+package twoPointer;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class BOJ2559 {
-	static int N, K;
+public class BOJ2230 {
+
+	static int N, M;
 	static int[] A;
 
 	static void input() {
 		Scanner sc = new Scanner(System.in);
 
 		N = sc.nextInt();
-		K = sc.nextInt();
+		M = sc.nextInt();
 
 		A = new int[N + 1];
+
 		for (int i = 1; i <= N; i++) {
 			A[i] = sc.nextInt();
 		}
+		Arrays.sort(A, 1, N);
+
 	}
 
 	static void pro() {
-		int count = 0;
-		int right = 0;
-		int sum = 0;
-		int max = Integer.MIN_VALUE;
+		int right = 1;
+		int sub = 0;
+		int min = Integer.MAX_VALUE;
 
 		for (int left = 1; left <= N; left++) {
-			while (right < N && count < K) {
-				right++;
-				count++;
-				sum += A[right];
+			while (right + 1 <= N && A[right] - A[left] < M) {
+				++right;
 			}
-			
-			if(count == K) {
-				max = Math.max(max, sum);
-				sum -= A[left];
-				count--;
+
+			if (A[right] - A[left] >= M) {
+				min = Math.min(min, A[right] - A[left]);
 			}
-			
+
 		}
-		
-		System.out.println(max);
+
+		System.out.println(min);
 	}
 
 	public static void main(String[] args) {

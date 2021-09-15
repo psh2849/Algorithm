@@ -1,7 +1,7 @@
 /*
  * 2003 수들의 합 2(두포인터)
  */
-package topologicalSort;
+package twoPointer;
 
 import java.util.Scanner;
 
