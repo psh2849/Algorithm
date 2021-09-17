@@ -1,5 +1,5 @@
 /*
- * 1068 Æ®¸®(2)
+ * 1068 Æ®ï¿½ï¿½(2)
  */
 package graph;
 
@@ -47,7 +47,7 @@ public class BOJ1068 {
 		if(root != erased) {
 			dfs(root, -1);
 		}
-		
+
 		System.out.println(leaf[root]);
 	}
 	

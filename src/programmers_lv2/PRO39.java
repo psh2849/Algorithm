@@ -13,7 +13,7 @@ public class PRO39 {
 		
 		for (int i = 0; i < cities.length; i++) {
 			cities[i] = cities[i].toLowerCase();
-			
+	
 			if (queue.size() < cacheSize) {
 				if (!queue.contains(cities[i])) {
 					queue.add(cities[i]);
@@ -39,7 +39,6 @@ public class PRO39 {
 				}
 			}
 		}
-		System.out.println(answer);
 		return answer;
 	}
 
