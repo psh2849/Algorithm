@@ -1,3 +1,6 @@
+/*
+ * https://programmers.co.kr/learn/courses/30/lessons/17684
+ */
 package programmers_lv2;
 
 import java.util.ArrayList;
@@ -13,7 +16,7 @@ public class PRO41 {
 		for(int i = 0; i < 26; i++) {
 			map.put(String.valueOf((char) (65 + i)), i + 1);
 		}
-		System.out.println(msg.length());
+		
 		for(int i = 0; i < msg.length(); i++) {
 			String str = "";
 			int save = 0;
@@ -23,19 +26,24 @@ public class PRO41 {
 				str += msg.charAt(j);
 				
 				if(map.containsKey(str)) {
-					System.out.println(str);
 					save = map.get(str);
-				} else {
+				} 
+				else {
 					if(count > 1) {
 						i = i + count - 1;
 					}
 					map.put(str, cnt);
 					cnt++;
 					list.add(save);
-					// System.out.println(save);
+					save = 0;
 					break;
 				}
 				count++;
+			}
+			
+			if(save != 0) {
+				list.add(save);
+				i = i + count - 1;
 			}
 		}
 		
