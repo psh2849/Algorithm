@@ -29,7 +29,6 @@ public class PRO47 {
 		list.add(Long.parseLong(str));
 		dfs(0, new char[3]);
 		
-		System.out.println(answer);
 		return answer;
 	}
 
