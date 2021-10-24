@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Main {
+public class BOJ3040 {
 	
 	static int[] arr;
 	static boolean[] visit, ans;
