@@ -51,7 +51,6 @@ public class PRO19 {
 		preorder(root);
 		idx = 0;
 		postorder(root);
-		
 		return result;
 	}
 	
@@ -82,8 +81,8 @@ public class PRO19 {
 	
 	static void postorder(Node root) {
 		if(root != null) {
-			preorder(root.left);
-			preorder(root.right);
+			postorder(root.left);
+			postorder(root.right);
 			result[1][idx++] = root.value;
 		}
 	}

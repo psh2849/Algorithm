@@ -1,5 +1,5 @@
 /*
- * https://moonsbeen.tistory.com/294
+ * 
  */
 package programmers_lv3;
 
@@ -20,7 +20,6 @@ public class PRO15 {
 	}
 
 	static String solution(int n, int k, String[] cmd) {
-		String answer = "";
 		int[] prev = new int[n];
 		int[] next = new int[n];
 
