@@ -1,6 +1,5 @@
 package union;
 
-import java.util.*;
 import java.io.*;
 
 public class BOJ10775 {
@@ -30,7 +29,7 @@ public class BOJ10775 {
 			union(pass, pass - 1);
 		}
 		
-		// System.out.println(answer);
+		System.out.println(answer);
 		
 	}
 	
