@@ -25,14 +25,6 @@ public class BOJ2357 {
 
 		minInit(1, n, 1);
 		maxInit(1, n, 1);
-
-		for (int i = 1; i < maxtree.length; i++) {
-			System.out.print(maxtree[i] + " ");
-		}
-		System.out.println();
-		for (int i = 1; i < mintree.length; i++) {
-			System.out.print(mintree[i] + " ");
-		}
 		
 		for (int i = 0; i < m; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
