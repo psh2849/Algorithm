@@ -17,13 +17,13 @@ public class BOJ12738 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuffer sb = new StringBuffer();
 		N = Integer.parseInt(br.readLine());
-
+		
 		list.add(0);
 
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		for (int i = 0; i < N; i++) {
 			int num = Integer.parseInt(st.nextToken());
-
+			
 			if (list.get(list.size() - 1) < num) {
 				list.add(num);
 			} else {
@@ -44,7 +44,13 @@ public class BOJ12738 {
 
 		}
 		sb.append(list.size() - 1);
-		System.out.println(sb);
+		
+		if(N == 1) {
+			System.out.println(1);
+		} else {
+			System.out.println(sb);
+		}
+		
 
 	}
 
