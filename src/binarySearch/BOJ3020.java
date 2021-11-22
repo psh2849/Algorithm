@@ -41,7 +41,7 @@ public class BOJ3020 {
 
 			crush += topSum[h] - topSum[h - i];
 			crush += bottomSum[h] - bottomSum[i - 1];
-			System.out.println(bottomSum[h] + " " + bottomSum[i] + " " + bottomSum[i - 1]);
+		
 			if(crush < min) {
 				min = crush;
 				cnt = 1;
