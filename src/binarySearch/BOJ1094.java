@@ -10,18 +10,18 @@ public class BOJ1094 {
 		int x = Integer.parseInt(br.readLine());
 		int num = 64;
 		int count = 0;
-		
-		while(x > 0) {
-			if(num > x) num /= 2;
+
+		while (x > 0) {
+			if (num > x)
+				num /= 2;
 			else {
 				count++;
-				x-=num;
+				x -= num;
 			}
 		}
-		
+
 		System.out.println(count);
-		
-		
+
 	}
 
 	public static void main(String[] args) throws IOException {
