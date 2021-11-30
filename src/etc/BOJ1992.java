@@ -27,13 +27,13 @@ public class BOJ1992 {
 
 	static void pro(int x, int y, int size) {
 		if (possible(x, y, size)) {
-			sb.append(map[x][y]);
+			sb.append(map[x][y] - '0');
 			return;
 		}
 
 		int newSize = size / 2;
 
-		sb.append('(' - '49');
+		sb.append('(');
 		
 		pro(x, y, newSize);
 		pro(x, y + newSize, newSize);
