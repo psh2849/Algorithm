@@ -25,8 +25,6 @@ public class BOJ2525 {
 			a = a - 24;
 		}
 		
-		
-		
 		System.out.println(a + " " + b);
 		
 	}
