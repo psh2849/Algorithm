@@ -27,7 +27,7 @@ public class BOJ16929 {
 		}
 
 		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
+			for (int j = 0; j < m; j++) {
 				if (!visit[i][j]) {
 					boolean answer = pro(i, j, -1, -1, map[i][j]);
 					if(answer) {
