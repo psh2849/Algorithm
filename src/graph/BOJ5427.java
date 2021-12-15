@@ -43,7 +43,8 @@ public class BOJ5427 {
 
 			m = Integer.parseInt(st.nextToken());
 			n = Integer.parseInt(st.nextToken());
-
+			
+			fire = new ArrayList<>();
 			visit = new boolean[n][m];
 			map = new char[n][m];
 			for (int i = 0; i < n; i++) {
@@ -51,6 +52,7 @@ public class BOJ5427 {
 				for (int j = 0; j < m; j++) {
 					map[i][j] = str.charAt(j);
 					if (map[i][j] == '@') {
+						map[i][j] = '.';
 						sx = i;
 						sy = j;
 					} else if (map[i][j] == '*') {
@@ -60,29 +62,26 @@ public class BOJ5427 {
 			}
 
 			pro(sx, sy);
-			fire.clear();
 		}
-
 	}
 
 	static void pro(int x, int y) {
 		Queue<Point> queue = new LinkedList<>();
-		queue.add(new Point(x, y, 0));
+		queue.add(new Point(x, y, 1));
 		visit[x][y] = true;
-
+		int save = 1;
+		int answer = Integer.MAX_VALUE;
+		
 		while (!queue.isEmpty()) {
-			fireMove();
-			for(int i = 0; i < n; i++) {
-				for(int j = 0; j < m; j++) {
-					System.out.print(map[i][j] + " ");
-				}
-				System.out.println();
-			}
-			System.out.println();
 			Point p = queue.poll();
+			if(save == 1 || save != p.time) {
+				save = p.time;
+				fireMove();
+			}
+
 			if (p.x == 0 || p.x == n - 1 || p.y == 0 || p.y == m - 1) {
-				System.out.println(p.time);
-				return;
+				answer = p.time;
+				break;
 			}
 			for (int i = 0; i < 4; i++) {
 				int dx = p.x + dir[i][0];
@@ -96,17 +95,23 @@ public class BOJ5427 {
 				queue.add(new Point(dx, dy, p.time + 1));
 			}
 		}
+		
+		if(answer == Integer.MAX_VALUE) {
+			System.out.println("IMPOSSIBLE");
+		} else {
+			System.out.println(answer);
+		}
 	}
 
 	static void fireMove() {
-		boolean[][] v = new boolean[n][m];
 		Queue<Fire> queue = new LinkedList<>();
 		
 		for (Fire f : fire) {
-			System.out.println(f.x + " " + f.y);
 			queue.add(f);
 		}
-
+		
+		fire.clear();
+		
 		while (!queue.isEmpty()) {
 			Fire f = queue.poll();
 
@@ -116,13 +121,10 @@ public class BOJ5427 {
 
 				if (dx < 0 || dy < 0 || dx >= n || dy >= m)
 					continue;
-				if (map[dx][dy] == '#')
-					continue;
-				if (v[dx][dy])
+				if (map[dx][dy] == '#' || map[dx][dy] == '*')
 					continue;
 
 				map[dx][dy] = '*';
-				v[dx][dy] = true;
 				fire.add(new Fire(dx, dy));
 			}
 		}
