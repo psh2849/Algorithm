@@ -15,18 +15,19 @@ public class BOJ9996 {
 		
 		pattern = br.readLine();
 		String[] split = pattern.split("\\*");
+		
 		for (int i = 0; i < n; i++) {
 			String str = br.readLine();
 			
-			int front = str.indexOf(split[0]);
-			int back = str.indexOf(split[1]);
-			
-			if(front == -1 || back == -1) {
+			if(str.length() < pattern.length() - 1) {
 				System.out.println("NE");
 				continue;
 			}
 			
-			if(front < back) {
+			String front = str.substring(0, split[0].length());
+			String back = str.substring(str.length() - split[1].length(), str.length());
+			
+			if(front.equals(split[0]) && back.equals(split[1])) {
 				System.out.println("DA");
 			} else {
 				System.out.println("NE");
