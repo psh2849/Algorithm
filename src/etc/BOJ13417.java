@@ -15,13 +15,25 @@ public class BOJ13417 {
 			int num = Integer.parseInt(br.readLine());
 			String str = br.readLine();
 			
+			ArrayList<String> list = new ArrayList<>();
 			String[] split = str.split(" ");
-			Arrays.sort(split);
+			
 			for(int i = 0; i < split.length; i++) {
-				System.out.print(split[i] + " ");
+				if(i == 0) {
+					list.add(split[0]);
+				} else {
+					if(list.get(0).compareTo(split[i]) < 0) {
+						list.add(split[i]);
+					} else {
+						list.add(0, split[i]);
+					}
+				}
+			}
+			
+			for(int i = 0; i < list.size(); i++) {
+				System.out.print(list.get(i));
 			}
 			System.out.println();
-			
 		}
 
 	}
