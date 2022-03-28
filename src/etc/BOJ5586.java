@@ -1,6 +1,5 @@
 package etc;
 
-import java.util.*;
 import java.io.*;
 
 public class BOJ5586 {
