@@ -16,6 +16,11 @@ public class BOJ10156 {
 		k = Integer.parseInt(st.nextToken());
 		
 		int result = n * m - k;
+		
+		if(result < 0) {
+			System.out.println(0);
+			return;
+		}
 		System.out.println(result);
 		
 	}
