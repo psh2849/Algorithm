@@ -2,7 +2,7 @@ package programmers_lv2;
 
 import java.util.*;
 
-public class BOJ51 {
+public class PRO51 {
 
 	public int solution(int[] queue1, int[] queue2) {
 		int answer = -2;

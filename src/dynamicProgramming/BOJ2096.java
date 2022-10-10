@@ -6,7 +6,6 @@ import java.io.*;
 public class BOJ2096 {
 
 	static int n;
-	static int[] map;
 	static int[] maxDp;
 	static int[] minDp;
 
@@ -14,7 +13,7 @@ public class BOJ2096 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		n = Integer.parseInt(br.readLine());
-		map = new int[n];
+		
 		maxDp = new int[3];
 		minDp = new int[3];
 
