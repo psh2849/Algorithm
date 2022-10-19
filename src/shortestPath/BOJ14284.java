@@ -49,7 +49,6 @@ public class BOJ14284 {
 		st = new StringTokenizer(br.readLine(), " ");
 		s = Integer.parseInt(st.nextToken());
 		t = Integer.parseInt(st.nextToken());
-
 		pro();
 	}
 

@@ -22,7 +22,6 @@ public class PRO54 {
                 intime.remove(str[1]);
             }
         }
-        
         intime.forEach((key, val) -> {
             result.put(key, result.get(key) + 23 * 60 + 59 - val);
         });
